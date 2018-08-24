@@ -3,15 +3,28 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  arr.reduce(0, :+)
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  sorted_array = arr.sort
+  max_number   = 0
+  cont = 1
+  acum = 0
+  while cont <= 2 && max_number = sorted_array.pop
+    acum = acum + max_number
+    cont = cont + 1
+  end
+  acum
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  for index in 0..arr.size - 2
+    if arr[index] + arr[index + 1] == n
+      return true
+    end
+  end
+  return false
 end
 
 # Part 2
