@@ -47,5 +47,24 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  attr_reader :isbn, :price
+
+  def initialize(isbn, price)
+    self.isbn  = isbn
+    self.price = price
+  end
+
+  def isbn=(isbn)
+    raise ArgumentError if isbn.empty?
+    @isbn = isbn
+  end
+
+  def price=(price)
+    raise ArgumentError if price <= 0.00
+    @price = price
+  end
+
+  def price_as_string
+    ("$%0.2f" % @price)
+  end
 end
